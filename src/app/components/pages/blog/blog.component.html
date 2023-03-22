@@ -1,0 +1,129 @@
+<section id="hero">
+  <div class="container-xl">
+    <div class="row gy-4">
+      <div class="col-lg-8">
+        <div class="post featured-post-lg">
+          <div class="details clearfix">
+            <a [routerLink]="['/category', postData.id]" class="category-badge">{{ postData.category.category }}</a>
+            <h2 class="post-title">
+              <a href="#">{{ postData.title }}</a>
+            </h2>
+            <ul class="meta list-inline mb-0">
+              <li class="list-inline-item">
+                <a href="#">Dave Budah</a>
+              </li>
+              <li class="list-inline-item">{{ postData.createdOn.toMillis() | date }}</li>
+            </ul>
+          </div>
+          <a href="">
+            <div class="thumb rounded">
+              <img class="inner data-bg-image w-100" src="{{ postData.postImgPath }}" alt="">
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="widget rounded">
+          <div class="widget-header text-center">
+            <h3 class="widget-title">Related Posts</h3>
+          </div>
+          <div class="widget-content">
+            <div class="post post-list-sm circle" *ngFor="let related of relatedPostArray">
+              <div class="thumb circle">
+                <span class="number">1</span>
+                <a href="">
+                  <div class="inner">
+                    <img src="{{ related.postImgPath }}" alt="">
+                  </div>
+                </a>
+              </div>
+              <div class="details clearfix">
+                <h6 class="post-title my-0">
+                  <a href="">{{ related.title }}</a>
+                </h6>
+                <ul class="meta list-inline mt-1 mb-0">
+                  <li class="list-inline-item">{{ related.createdOn.toMillis() | date }}</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--    Main Content -->
+<section class="main-content">
+  <div class="container-xl">
+    <div class="row gy-4">
+      <div class="col-lg-8">
+        <!--            Left side starts here -->
+        <p [innerHtml] = "postData.content"></p>
+
+        <!--          Comments start here  -->
+        <div class="section-header">
+          <h3 class="section-title">Comments</h3>
+        </div>
+        <div class="my-4">
+         <app-form></app-form>
+
+         <app-comments></app-comments>
+        </div>
+        <!--          Comments start here  -->
+        <!--            Left side ends here -->
+      </div>
+      <!--                Right side starts here -->
+      <div class="col-lg-4">
+        <!--                    <div class="sidebar">-->
+        <div class="widget rounded">
+          <div class="widget-about text-center">
+            <img src="assets/images/logos/logo.png" alt="" width="100">
+            <p class="mb-4" style="text-align:justify;">Selvigtech Blogsite is Lorem ipsum dolor sit amet,
+              consectetur adipisicing elit. Deserunt, dicta doloribus dolorum
+              expedita explicabo iusto laboriosam officia porro quisquam rem
+              repellat repellendus saepe sed vel voluptatem! Aperiam assumenda
+              mollitia possimus.</p>
+            <ul class="social-icons list-unstyled list-inline mb-0">
+              <li class="list-inline-item mb-0">
+                <a href=""><i class="fab fa-facebook-f"></i></a>
+              </li>
+              <li class="list-inline-item mb-0">
+                <a href=""><i class="fab fa-linkedin-in"></i></a>
+              </li>
+              <li class="list-inline-item mb-0">
+                <a href=""><i class="fab fa-twitter"></i></a>
+              </li>
+              <li class="list-inline-item mb-0">
+                <a href=""><i class="fab fa-telegram"></i></a>
+              </li>
+              <li class="list-inline-item mb-0">
+                <a href=""><i class="fab fa-whatsapp"></i></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+
+        <div class="widget rounded">
+        <app-categories></app-categories>
+        </div>
+
+        <div class="widget rounded">
+          <app-adverts></app-adverts>
+        </div>
+
+        <div class="widget rounded">
+         <app-newsletter></app-newsletter>
+        </div>
+
+        <div class="widget rounded">
+          <app-tags></app-tags>
+        </div>
+
+        <!--                    </div>-->
+      </div>
+      <!--                Right side ends here -->
+    </div>
+  </div>
+</section>

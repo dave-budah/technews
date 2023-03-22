@@ -1,0 +1,724 @@
+<!--    Hero Section -->
+<section id="hero">
+  <div class="container-xl">
+    <div class="row gy-4">
+      <div class="col-lg-8">
+        <div class="post featured-post-lg" *ngFor="let featuredPost of featuredPostsArray">
+          <div class="details clearfix">
+            <a [routerLink]="['/blog', featuredPost.id]" class="category-badge">{{ featuredPost.data.category.category }}</a>
+            <h2 class="post-title">
+              <a [routerLink]="['/blog', featuredPost.id]">{{ featuredPost.data.title }}</a>
+            </h2>
+            <ul class="meta list-inline mb-0">
+              <li class="list-inline-item">
+                <a [routerLink]="['/blog', featuredPost.id]">Dave Budah</a>
+              </li>
+              <li class="list-inline-item">{{ featuredPost.data.createdOn.toMillis() | date }}</li>
+            </ul>
+          </div>
+          <a [routerLink]="['/blog', featuredPost.id]">
+            <div class="thumb rounded">
+              <img class="inner data-bg-image" src="{{ featuredPost.data.postImgPath }}" alt="">
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="post-tabs rounded bordered">
+          <app-recents></app-recents>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--    Main Content -->
+<section class="main-content">
+  <div class="container-xl">
+    <div class="row gy-4">
+      <div class="col-lg-8">
+        <div class="section-header">
+          <h3 class="section-title">Editor's Pick</h3>
+        </div>
+
+        <div class="padding-30 rounded bordered">
+          <div class="row gy-5">
+            <div class="col-sm-6">
+              <!--             Post -->
+              <div class="post">
+                <div class="thumb rounded">
+                  <a href="" class="category-badge position-absolute">Programming</a>
+                  <span class="post-format">
+                      <i class="bi bi-image"></i>
+                  </span>
+                  <a href="">
+                    <div class="inner">
+                      <img src="assets/images/c.jpg" alt="">
+                    </div>
+                  </a>
+                </div>
+                <ul class="meta list-inline mt-4 mb-0">
+                  <li class="list-inline-item">
+                    <a href="">
+                      <img  class="author" src="assets/images/dave.jpg" alt="">
+                      Dave Budah
+                    </a>
+                  </li>
+                  <li class="list-inline-item">05 May 2022</li>
+                </ul>
+                <h5 class="post-title mb-3 mt-3">
+                  <a href="">The best free Text editors for web development.</a>
+                </h5>
+                <p class="excerpt mb-0">
+                  As it is said, the best things are free. Some text editors tend to vindicate that quote.
+                </p>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="post post-list-sm square">
+                <div class="thumb rounded">
+                  <a href="" class="custom">
+                    <div class="inner">
+                      <img src="assets/images/a.jpg" alt="">
+                    </div>
+                  </a>
+                </div>
+                <div class="details clearfix">
+                  <h6 class="post-title my-0">
+                    <a href="">
+                      The importance of owning a personal website.
+                    </a>
+                  </h6>
+                  <ul class="meta list-inline mt-1 mb-0">
+                    <li class="list-inline-item"> 07 May 2022</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="post post-list-sm square">
+                <div class="thumb rounded">
+                  <a href="" class="custom">
+                    <div class="inner">
+                      <img src="assets/images/d.jpg" alt="">
+                    </div>
+                  </a>
+                </div>
+                <div class="details clearfix">
+                  <h6 class="post-title my-0">
+                    <a href="">
+                      Are all programmers good at mathematics.
+                    </a>
+                  </h6>
+                  <ul class="meta list-inline mt-1 mb-0">
+                    <li class="list-inline-item"> 07 May 2022</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="post post-list-sm square">
+                <div class="thumb rounded">
+                  <a href="" class="custom">
+                    <div class="inner">
+                      <img src="assets/images/c.jpg" alt="">
+                    </div>
+                  </a>
+                </div>
+                <div class="details clearfix">
+                  <h6 class="post-title my-0">
+                    <a href="" class="custom">
+                      Do you need 5k setup to be a better developer?.
+                    </a>
+                  </h6>
+                  <ul class="meta list-inline mt-1 mb-0">
+                    <li class="list-inline-item"> 07 May 2022</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="post post-list-sm square">
+                <div class="thumb rounded">
+                  <a href="" class="custom">
+                    <div class="inner">
+                      <img src="assets/images/a.jpg" alt="">
+                    </div>
+                  </a>
+                </div>
+                <div class="details clearfix">
+                  <h6 class="post-title my-0">
+                    <a href="">
+                      Best budget laptops for programming.
+                    </a>
+                  </h6>
+                  <ul class="meta list-inline mt-1 mb-0">
+                    <li class="list-inline-item"> 07 May 2022</li>
+                  </ul>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+        <div class="spacer" data-height="50"></div>
+
+        <div class="section-header">
+          <h3 class="section-title">Trending</h3>
+        </div>
+
+        <div class="padding-30 rounded bordered">
+          <div class="row gy-5">
+            <div class="col-sm-6">
+              <div class="post">
+                <div class="thumb rounded">
+                  <a href="" class="category-badge position-absolute">Business</a>
+                  <span class="post-format">
+                      <i class="bi bi-image"></i>
+                  </span>
+                  <a href="">
+                    <div class="inner">
+                      <img src="assets/images/d.jpg" alt="" class="">
+                    </div>
+                  </a>
+                </div>
+                <ul class="meta list-inline mt-4 mb-0">
+                  <li class="list-inline-item">
+                    <a href="">
+                      <img src="assets/images/david.jpg" class="author" alt="">
+                      Cyberzeus
+                    </a>
+                  </li>
+                  <li class="list-inline-item">08 May 2022</li>
+                </ul>
+                <h5 class="post-title mb-3 mt-3">
+                  <a href="">The best hacks to speed up your dev skills.</a>
+                </h5>
+                <p class="excerpt mb-0">
+                  The journey to become a descent developer can be confusing and frustrating.
+                </p>
+              </div>
+              <div class="post post-list-sm square before-separator">
+                <div class="thumb rounded">
+                  <a href="" class="custom">
+                    <div class="inner">
+                      <img src="assets/images/b.jpg" alt="">
+                    </div>
+                  </a>
+                </div>
+                <div class="details clearfix">
+                  <h6 class="post-title my-0">
+                    <a href="">How open source can help you improve your skills.</a>
+                  </h6>
+                  <ul class="meta list-inline mt-1 mb-0">
+                    <li class="list-inline-item"> 07 May 2022</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="post post-list-sm square before-separator">
+                <div class="thumb rounded">
+                  <a href="" class="custom">
+                    <div class="inner">
+                      <img src="assets/images/a.jpg" alt="">
+                    </div>
+                  </a>
+                </div>
+                <div class="details clearfix">
+                  <h6 class="post-title my-0">
+                    <a href="">Become a content creator in a few steps.</a>
+                  </h6>
+                  <ul class="meta list-inline mt-1 mb-0">
+                    <li class="list-inline-item"> 07 May 2022</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-sm-6">
+              <div class="post">
+                <div class="thumb rounded">
+                  <a href="" class="category-badge position-absolute">Business</a>
+                  <span class="post-format">
+                  <i class="bi bi-image"></i>
+              </span>
+                  <a href="">
+                    <div class="inner">
+                      <img src="assets/images/c.jpg" alt="" class="">
+                    </div>
+                  </a>
+                </div>
+                <ul class="meta list-inline mt-4 mb-0">
+                  <li class="list-inline-item">
+                    <a href="">
+                      <img src="assets/images/zues.jpg" class="author" alt="">
+                      Cyberzeus
+                    </a>
+                  </li>
+                  <li class="list-inline-item">08 May 2022</li>
+                </ul>
+                <h5 class="post-title mb-3 mt-3">
+                  <a href="">Which OS is the best for programming?</a>
+                </h5>
+                <p class="excerpt mb-0">
+                  The journey to become a descent developer can be confusing and frustrating.
+                </p>
+              </div>
+              <div class="post post-list-sm square before-separator">
+                <div class="thumb rounded">
+                  <a href="" class="custom">
+                    <div class="inner">
+                      <img src="assets/images/b.jpg" alt="">
+                    </div>
+                  </a>
+                </div>
+                <div class="details clearfix">
+                  <h6 class="post-title my-0">
+                    <a href="">How open source can help you improve your skills.</a>
+                  </h6>
+                  <ul class="meta list-inline mt-1 mb-0">
+                    <li class="list-inline-item"> 07 May 2022</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="post post-list-sm square before-separator">
+                <div class="thumb rounded">
+                  <a href="" class="custom">
+                    <div class="inner">
+                      <img src="assets/images/a.jpg" alt="">
+                    </div>
+                  </a>
+                </div>
+                <div class="details clearfix">
+                  <h6 class="post-title my-0">
+                    <a href="">Become a content creator in a few steps.</a>
+                  </h6>
+                  <ul class="meta list-inline mt-1 mb-0">
+                    <li class="list-inline-item"> 07 May 2022</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <div class="spacer" data-height="50"></div>
+
+        <div class="section-header">
+          <h3 class="section-title">Inspiration</h3>
+          <div class="slick-arrows-top">
+            <button class="carousel-topNav-prev slick-custom-buttons" data-role="none" aria-label="Previous">
+              <i class="bi bi-chevron-left"></i>
+            </button>
+            <button class="carousel-topNav-next slick-custom-buttons" data-role="none" aria-label="Next">
+              <i class="bi bi-chevron-right"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="row post-carousel-twoCol post-carousel">
+          <div class="post post-over-content col-md-6">
+            <div class="details clearfix">
+              <a href="" class="category-badge">Linux</a>
+              <h4 class="post-title">
+                <a href="">Types of Linux Destros that support almost all IDEs.</a>
+              </h4>
+              <ul class="meta list-inline mb-0">
+                <li class="list-inline-item">
+                  <a href="">Dave Budah</a>
+                </li>
+                <li class="list-inline-item">12 May 2022</li>
+              </ul>
+            </div>
+            <a href="">
+              <div class="thumb rounded">
+                <div class="inner">
+                  <img src="assets/images/c.jpg" alt="">
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="post post-over-content col-md-6">
+            <div class="details clearfix">
+              <a href="" class="category-badge">Hacking</a>
+              <h4 class="post-title">
+                <a href="">What is hacking really?. Is it real?.</a>
+              </h4>
+              <ul class="meta list-inline mb-0">
+                <li class="list-inline-item">
+                  <a href="">Dave Budah</a>
+                </li>
+                <li class="list-inline-item">12 May 2022</li>
+              </ul>
+            </div>
+            <a href="">
+              <div class="thumb rounded">
+                <div class="inner">
+                  <img src="assets/images/a.jpg" alt="">
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="post post-over-content col-md-6">
+            <div class="details clearfix">
+              <a href="" class="category-badge">Hacking</a>
+              <h4 class="post-title">
+                <a href="">Best VS Code themes that will help you code faster.</a>
+              </h4>
+              <ul class="meta list-inline mb-0">
+                <li class="list-inline-item">
+                  <a href="">Dave Budah</a>
+                </li>
+                <li class="list-inline-item">12 May 2022</li>
+              </ul>
+            </div>
+            <a href="">
+              <div class="thumb rounded">
+                <div class="inner">
+                  <img src="assets/images/c.jpg" alt="">
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="post post-over-content col-md-6">
+            <div class="details clearfix">
+              <a href="" class="category-badge">Hacking</a>
+              <h4 class="post-title">
+                <a href="">What is hacking really?. Is it real?.</a>
+              </h4>
+              <ul class="meta list-inline mb-0">
+                <li class="list-inline-item">
+                  <a href="">Dave Budah</a>
+                </li>
+                <li class="list-inline-item">12 May 2022</li>
+              </ul>
+            </div>
+            <a href="">
+              <div class="thumb rounded">
+                <div class="inner">
+                  <img src="assets/images/a.jpg" alt="">
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="spacer" data-height="50"></div>
+
+        <div class="section-header">
+          <h3 class="section-title">Latest Posts</h3>
+        </div>
+
+        <div class="padding-30 rounded bordered">
+          <div class="row">
+            <div class="col-md-12 col-sm-6">
+              <div class="post post-list clearfix">
+                <div class="thumb rounded">
+                  <span class="post-format-sm">
+                      <i class="bi bi-image"></i>
+                  </span>
+                  <a href="">
+                    <div class="inner">
+                      <img src="assets/images/d.jpg" alt="">
+                    </div>
+                  </a>
+                </div>
+                <div class="details">
+                  <ul class="meta list-inline mb-3">
+                    <li class="list-inline-item">
+                      <a href="">
+                        <img src="assets/images/david.jpg" class="author" alt="">
+                        David Budah
+                      </a>
+                    </li>
+                    <li class="list-inline-item">
+                      <a href="">Trending</a>
+                    </li>
+                    <li class="list-inline-item">14 May 2022</li>
+                  </ul>
+                  <h5 class="post-title">
+                    <a href="">Top 3 Frontend frameworks that I use for my projects.</a>
+                  </h5>
+                  <p class="excerpt mb-0">
+                    Today I'm back again with another blog talking about myself again lol.
+                  </p>
+                  <div class="post-bottom clearfix d-flex align-items-center">
+                    <div class="social-share me-auto">
+                      <button class="toggle-button"><span class="bi bi-share"></span></button>
+                      <ul class="icons list-unstyled list-inline mb-0">
+                        <li class="list-inline-item mb-0">
+                          <a href=""><i class="bi bi-facebook"></i></a>
+                        </li>
+                        <li class="list-inline-item mb-0">
+                          <a href=""><i class="bi bi-linkedin"></i></a>
+                        </li>
+                        <li class="list-inline-item mb-0">
+                          <a href=""><i class="bi bi-twitter"></i></a>
+                        </li>
+                        <li class="list-inline-item mb-0">
+                          <a href=""><i class="bi bi-telegram"></i></a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="more-button float-end">
+                      <a href=""><i class="bi bi-three-dots-vertical"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12 col-sm-6">
+              <div class="post post-list clearfix">
+                <div class="thumb rounded">
+                  <span class="post-format-sm">
+                      <i class="bi bi-image"></i>
+                  </span>
+                  <a href="">
+                    <div class="inner">
+                      <img src="assets/images/c.jpg" alt="">
+                    </div>
+                  </a>
+                </div>
+                <div class="details">
+                  <ul class="meta list-inline mb-3">
+                    <li class="list-inline-item">
+                      <a href="">
+                        <img src="assets/images/dave.jpg" class="author" alt="">
+                        Dave B
+                      </a>
+                    </li>
+                    <li class="list-inline-item">
+                      <a href="">Trending</a>
+                    </li>
+                    <li class="list-inline-item">14 May 2022</li>
+                  </ul>
+                  <h5 class="post-title">
+                    <a href="">Road map to become a fullstack developer.</a>
+                  </h5>
+                  <p class="excerpt mb-0">
+                    This is an in depth guide on how to become a full stack developer.
+                  </p>
+                  <div class="post-bottom clearfix d-flex align-items-center">
+                    <div class="social-share me-auto">
+                      <button class="toggle-button "><span class="bi bi-share"></span></button>
+                      <ul class="icons list-unstyled list-inline mb-0">
+                        <li class="list-inline-item mb-0">
+                          <a href=""><i class="bi bi-facebook"></i></a>
+                        </li>
+                        <li class="list-inline-item mb-0">
+                          <a href=""><i class="bi bi-linkedin"></i></a>
+                        </li>
+                        <li class="list-inline-item mb-0">
+                          <a href=""><i class="bi bi-twitter"></i></a>
+                        </li>
+                        <li class="list-inline-item mb-0">
+                          <a href=""><i class="bi bi-telegram"></i></a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="more-button float-end">
+                      <a href=""><i class="bi bi-three-dots-vertical"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12 col-sm-6">
+              <div class="post post-list clearfix">
+                <div class="thumb rounded">
+                    <span class="post-format-sm">
+                        <i class="bi bi-image"></i>
+                    </span>
+                  <a href="">
+                    <div class="inner">
+                      <img src="assets/images/b.jpg" alt="">
+                    </div>
+                  </a>
+                </div>
+                <div class="details">
+                  <ul class="meta list-inline mb-3">
+                    <li class="list-inline-item">
+                      <a href="">
+                        <img src="assets/images/zues.jpg" class="author" alt="">
+                        Cyberzeus
+                      </a>
+                    </li>
+                    <li class="list-inline-item">
+                      <a href="">Trending</a>
+                    </li>
+                    <li class="list-inline-item">14 May 2022</li>
+                  </ul>
+                  <h5 class="post-title">
+                    <a href="">Sources for free stock content.</a>
+                  </h5>
+                  <p class="excerpt mb-0">
+                    Finding the perfect images, videos for a website project can be frustrating.
+                  </p>
+                  <div class="post-bottom clearfix d-flex align-items-center">
+                    <div class="social-share me-auto">
+                      <button class="toggle-button "><span class="bi bi-share"></span></button>
+                      <ul class="icons list-unstyled list-inline mb-0">
+                        <li class="list-inline-item mb-0">
+                          <a href=""><i class="bi bi-facebook"></i></a>
+                        </li>
+                        <li class="list-inline-item mb-0">
+                          <a href=""><i class="bi bi-linkedin-in"></i></a>
+                        </li>
+                        <li class="list-inline-item mb-0">
+                          <a href=""><i class="bi bi-twitter"></i></a>
+                        </li>
+                        <li class="list-inline-item mb-0">
+                          <a href=""><i class="bi bi-telegram"></i></a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="more-button float-end">
+                      <a href=""><i class="bi bi-three-dots-vertical"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="text-center">
+              <button class="btn btn-simple">Load more</button>
+            </div>
+
+          </div>
+        </div>
+        <!--            Left side ends here -->
+      </div>
+      <!--                Right side starts here -->
+      <div class="col-lg-4">
+        <!--          <div class="sidebar">-->
+        <div class="widget rounded">
+          <div class="widget-about text-center">
+            <img src="assets/images/logos/logo.png" alt="" width="100">
+            <p class="mb-4" style="text-align:justify;">Selvigtech Blogsite is Lorem ipsum dolor sit amet,
+              consectetur adipisicing elit. Deserunt, dicta doloribus dolorum
+              expedita explicabo iusto laboriosam officia porro quisquam rem
+              repellat repellendus saepe sed vel voluptatem! Aperiam assumenda
+              mollitia possimus.</p>
+            <ul class="social-icons list-unstyled list-inline mb-0">
+              <li class="list-inline-item mb-0">
+                <a href=""><i class="bi bi-facebook"></i></a>
+              </li>
+              <li class="list-inline-item mb-0">
+                <a href=""><i class="bi bi-linkedin"></i></a>
+              </li>
+              <li class="list-inline-item mb-0">
+                <a href=""><i class="bi bi-twitter"></i></a>
+              </li>
+              <li class="list-inline-item mb-0">
+                <a href=""><i class="bi bi-telegram"></i></a>
+              </li>
+              <li class="list-inline-item mb-0">
+                <a href=""><i class="bi bi-whatsapp"></i></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="widget rounded">
+          <div class="widget-header text-center">
+            <h3 class="widget-title">Popular Posts</h3>
+          </div>
+          <div class="widget-content">
+            <div class="post post-list-sm circle">
+              <div class="thumb circle">
+                <span class="number">1</span>
+                <a href="">
+                  <div class="inner">
+                    <img src="assets/images/tab-a.jpg" alt="">
+                  </div>
+                </a>
+              </div>
+              <div class="details clearfix">
+                <h6 class="post-title my-0">
+                  <a href="">How to review your Wi-Fi password.</a>
+                </h6>
+                <ul class="meta list-inline mt-1 mb-0">
+                  <li class="list-inline-item">14 May 2021</li>
+                </ul>
+              </div>
+            </div>
+            <div class="post post-list-sm circle">
+              <div class="thumb circle">
+                <span class="number">2</span>
+                <a href="">
+                  <div class="inner">
+                    <img src="assets/images/tab-b.jpg" alt="">
+                  </div>
+                </a>
+              </div>
+              <div class="details clearfix">
+                <h6 class="post-title my-0">
+                  <a href="">How to solve the 100% disk usage issue on Windows.</a>
+                </h6>
+                <ul class="meta list-inline mt-1 mb-0">
+                  <li class="list-inline-item">14 May 2021</li>
+                </ul>
+              </div>
+            </div>
+            <div class="post post-list-sm circle">
+              <div class="thumb circle">
+                <span class="number">3</span>
+                <a href="">
+                  <div class="inner">
+                    <img src="assets/images/tab-c.jpg" alt="">
+                  </div>
+                </a>
+              </div>
+              <div class="details clearfix">
+                <h6 class="post-title my-0">
+                  <a href="">A better terminal to use on Windows.</a>
+                </h6>
+                <ul class="meta list-inline mt-1 mb-0">
+                  <li class="list-inline-item">14 May 2021</li>
+                </ul>
+              </div>
+            </div>
+            <div class="post post-list-sm circle">
+              <div class="thumb circle">
+                <span class="number">4</span>
+                <a href="">
+                  <div class="inner">
+                    <img src="assets/images/tab-d.jpg" alt="">
+                  </div>
+                </a>
+              </div>
+              <div class="details clearfix">
+                <h6 class="post-title my-0">
+                  <a href="">VS Code settings that will give you a better experience.</a>
+                </h6>
+                <ul class="meta list-inline mt-1 mb-0">
+                  <li class="list-inline-item">14 May 2021</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+<!--        Categories -->
+        <div class="widget rounded">
+          <app-categories></app-categories>
+        </div>
+
+<!--        Ads -->
+        <div class="widget rounded">
+          <app-adverts></app-adverts>
+        </div>
+
+<!--        Newsletter -->
+        <div class="widget rounded">
+          <app-newsletter></app-newsletter>
+        </div>
+
+<!--        Tags -->
+        <div class="widget rounded">
+          <app-tags></app-tags>
+        </div>
+
+        <!--        </div>-->
+      </div>
+
+    </div>
+  </div>
+</section>

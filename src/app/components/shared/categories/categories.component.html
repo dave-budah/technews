@@ -1,0 +1,11 @@
+<div class="widget-header text-center">
+  <h3 class="widget-title">Categories</h3>
+</div>
+<div class="widget-content">
+  <ul class="list">
+    <li *ngFor="let category of categoryArray">
+      <a href="#"><span class="bi bi-caret-right me-4"></span>{{ category.data.category }}<span>()</span></a>
+    </li>
+
+  </ul>
+</div>

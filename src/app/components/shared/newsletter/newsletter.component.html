@@ -1,0 +1,37 @@
+ <div class="widget-header text-center">
+    <h3 class="widget-title">Newsletter</h3>
+  </div>
+  <div class="widget-content">
+    <span class="newsletter-headline text-center mb-3">Join our mailing list</span>
+    <form class="mb-2" #newsletter = ngForm (ngSubmit)="onSubmit(newsletter.value)">
+      <div class="mb-3 form-group">
+        <input type="text"
+               name="name"
+               class="form-control w-100"
+               placeholder="Name"
+               #Name = 'ngModel'
+               [ngClass]="{'is-invalid': Name.touched && Name.invalid }"
+               ngModel required>
+        <span class="error-msg w-100" *ngIf="Name.touched && Name.invalid">
+          <span class="error-msg w-100" *ngIf="Name.errors?.['required']">Name cannot be empty</span>
+        </span>
+      </div>
+      <div class="mb-4 form-group">
+        <input type="text"
+               name="email"
+               class="form-control w-100"
+               #Email='ngModel'
+               [ngClass]="{'is-invalid': Email.touched && Email.invalid }"
+               placeholder="Email"
+               ngModel required email>
+        <span class="error-msg w-100" *ngIf="Email.touched && Email.invalid">
+          <span class="error-msg w-100" *ngIf="Email.errors?.['required']">Email cannot be empty</span>
+          <span class="error-msg w-100" *ngIf="Email.errors?.['email']">Enter a valid email address</span>
+        </span>
+      </div>
+      <button class="btn btn-default btn-full" [disabled]="newsletter.invalid"><i class="bi bi-send"></i></button>
+    </form>
+    <span class="newsletter-privacy text-center mt-3">
+        By signing up, you agree to our <a href="#">Privacy policy</a>
+    </span>
+  </div>

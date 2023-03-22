@@ -1,0 +1,57 @@
+<header class="header-default">
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-xl">
+      <a href="/" class="nav-brand">
+        <img src="assets/images/logos/logo.png" alt="" width="90px">
+      </a>
+
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item dropdown active">
+            <a href="/" class="nav-link dropdown-toggle">Categories</a>
+            <ul class="dropdown-menu">
+              <li *ngFor="let category of categoryArray">
+                <a [routerLink]="['/category',category.data.category, category.id]" class="dropdown-item">{{ category.data.category }}</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="" class="nav-link">About</a>
+          </li>
+          <li class="nav-item">
+            <a href="" class="nav-link">Services</a>
+          </li>
+          <li class="nav-item">
+            <a href="" class="nav-link">Contact</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="header-right">
+        <ul class="social-icons list-style-unstyled list-inline mb-0">
+          <li class="list-inline-item">
+            <a href=""><i class="bi bi-facebook"></i></a>
+          </li>
+          <li class="list-inline-item">
+            <a href=""><i class="bi bi-twitter"></i></a>
+          </li>
+          <li class="list-inline-item">
+            <a href=""><i class="bi bi-linkedin"></i></a>
+          </li>
+          <li class="list-inline-item">
+            <a href=""><i class="bi bi-instagram"></i></a>
+          </li>
+        </ul>
+
+        <div class="header-buttons">
+          <button class="search icon-button">
+            <i class="bi bi-search"></i>
+          </button>
+          <button class="burger-menu icon-button">
+            <span class="bi bi-list"></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
